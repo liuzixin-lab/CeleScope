@@ -1,7 +1,7 @@
 [report]
 omit =
     setup.py
-    scopetools/__main__.py
-    scopetools/_version.py
+    celescope/__main__.py
+    celescope/_version.py
     versioneer.py
     tests/*

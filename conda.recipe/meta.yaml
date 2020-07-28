@@ -2,7 +2,7 @@
 {% set data = load_setup_py_data() %}
 
 package:
-  name: scope-tools
+  name: celescope
   version: {{ data['version'] }}
 
 source:
@@ -28,16 +28,16 @@ extra:
 
 requirements:
   host:
-    - python ==3.7.6
+    - python >=3.7
     - pip
   run:
-    - python ==3.7.6
-    - star ==2.7.3a
-    - fastqc ==0.11.9
-    - picard ==2.22.8
-    - ucsc-gtftogenepred ==377
-    - subread ==2.0.0
-    - samtools ==1.9
+    - python >=3.7
+    - star >=2.7
+    - fastqc >=0.11
+    - picard >=2.23
+    - ucsc-gtftogenepred >=377
+    - subread >=2.0.0
+    - samtools >=1.7
     # dependencies are defined in setup.py
     {% for dep in data['install_requires'] %}
     - {{ dep.lower() }}
@@ -45,7 +45,7 @@ requirements:
     {# raw is for ignoring templating with cookiecutter, leaving it for use with conda-build #}
 
 about:
-  home: https://github.com/SingleronBio/SCOPE-tools
+  home: https://github.com/SingleronBio/CeleScope
   summary: Single Cell Omics Preparation Entity tools
   license: {{ data['license'] }}
   license_file: LICENSE

@@ -18,7 +18,7 @@
 
     .. code-block:: bash
 
-        scope run \
+        celescope run \
             --fq1 ./rawdata/R2005073_L1_1.fq.gz \
             --fq2 ./rawdata/R2005073_L1_2.fq.gz \
             --outdir ./ \
@@ -45,13 +45,13 @@
 
 #. 使用说明
 
-    SCOPE-tools包含7个子命令, 分别是sample, barcode, cutadapt, STAR, featureCounts, count, cluster和run.
+    CeleScope包含7个子命令, 分别是sample, barcode, cutadapt, STAR, featureCounts, count, cluster和run.
 
     .. code-block:: bash
 
-        scope -h
+        celescope -h
 
-        Usage: scope [OPTIONS] COMMAND1 [ARGS]... [COMMAND2 [ARGS]...]...
+        Usage: celescope [OPTIONS] COMMAND1 [ARGS]... [COMMAND2 [ARGS]...]...
 
           Single Cell Omics Preparation Entity Tools
 
@@ -76,7 +76,7 @@
         * 示例
             .. code-block:: bash
 
-                scope sample \
+                celescope sample \
                     --transcriptome Homo_sapiens \
                     --sample samplename \
                     --outdir ./
@@ -105,7 +105,7 @@
         * 示例
             .. code-block:: bash
 
-                scope barcode \
+                celescope barcode \
                     --fq1 ./rawdata/R2005073_L1_1.fq.gz \
                     --fq2 ./rawdata/R2005073_L1_2.fq.gz \
                     --sample samplename \
@@ -140,7 +140,7 @@
         * 示例
             .. code-block:: bash
 
-                scope cutadapt \
+                celescope cutadapt \
                     --fq ./samplename/01.barcode/samplename_2.fq.gz \
                     --sample samplename \
                     --outdir ./ \
@@ -168,7 +168,7 @@
         * 示例
             .. code-block:: bash
 
-                scope STAR \
+                celescope STAR \
                     --fq ./samplename/02.cutadapt/samplename_2.fq.gz \
                     --sample samplename \
                     --outdir ./ \
@@ -193,7 +193,7 @@
         * 示例
             .. code-block:: bash
 
-                scope featureCounts \
+                celescope featureCounts \
                     --bam ./samplename/03.STAR/samplename_Aligned.sortedByCoord.out.bam \
                     --annot ./references/Homo_sapiens/Ensembl/GRCh38/Homo_sapiens.GRCh38.99.gtf \
                     --sample samplename \
@@ -225,7 +225,7 @@
         * 示例
             .. code-block:: bash
 
-                scope count \
+                celescope count \
                     --bam ./samplename/04.featureCounts/samplename_name_sorted.bam \
                     --cells 3000 \
                     --sample samplename \
@@ -246,7 +246,7 @@
         * 示例
             .. code-block:: bash
 
-                scope cluster \
+                celescope cluster \
                     --matrix ./samplename/05.count/samplename_matrix.mtx \
                     --barcodes ./samplename/05.count/samplename_barcodes.tsv
                     --genes ./samplename/05.count/samplename_genes.tsv \
@@ -262,12 +262,12 @@
 
     * run
 
-        快速使用SCOPE-tools运行流程, 对数据进行分析.
+        快速使用CeleScope运行流程, 对数据进行分析.
 
         * 示例
                 .. code-block:: bash
 
-                    scope run \
+                    celescope run \
                         --fq1 ./rawdata/R2005073_L1_1.fq.gz \
                         --fq2 ./rawdata/R2005073_L1_2.fq.gz \
                         --outdir ./ \

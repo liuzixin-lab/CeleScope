@@ -19,26 +19,26 @@
 
         .. code-block:: bash
 
-           conda create -n scope
+           conda create -n celescope
     * 激活环境
 
         .. code-block:: bash
 
-           conda activate scope
-    * 安装scopetools
+           conda activate celescope
+    * 安装celescope
 
         .. code-block:: bash
 
-           conda install -c singleronbio scope-tools
+           conda install -c singleronbio celescope
 
 
     * 验证安装完成
 
         .. code-block:: bash
 
-            scope -h
+            celescope -h
 
-            Usage: scope [OPTIONS] COMMAND1 [ARGS]... [COMMAND2 [ARGS]...]...
+            Usage: celescope [OPTIONS] COMMAND1 [ARGS]... [COMMAND2 [ARGS]...]...
 
               Single Cell Omics Preparation Entity Tools
 
@@ -67,7 +67,7 @@
             gzip -c -d Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz > references/Homo_sapiens/Ensembl/GRCh38/Homo_sapiens.GRCh38.fa
             gzip -c -d Homo_sapiens.GRCh38.99.gtf.gz > references/Homo_sapiens/Ensembl/GRCh38/Homo_sapiens.GRCh38.99.gtf
 
-            conda activate scope
+            conda activate celescope
 
             gtfToGenePred -genePredExt -geneNameAsName2 references/Homo_sapiens/Ensembl/GRCh38/Homo_sapiens.GRCh38.99.gtf /dev/stdout | \
                 awk '{print $12"\t"$1"\t"$2"\t"$3"\t"$4"\t"$5"\t"$6"\t"$7"\t"$8"\t"$9"\t"$10}' > references/Homo_sapiens/Ensembl/GRCh38/Homo_sapiens.GRCh38.99.refFlat
@@ -92,7 +92,7 @@
             gzip -c -d Mus_musculus.GRCm38.dna.primary_assembly.fa.gz > references/Mus_musculus/Ensembl/GRCm38/Mus_musculus.GRCm38.fa
             gzip -c -d Mus_musculus.GRCm38.99.gtf.gz > references/Mus_musculus/Ensembl/GRCm38/Mus_musculus.GRCm38.99.gtf
 
-            conda activate scope
+            conda activate celescope
 
             gtfToGenePred -genePredExt -geneNameAsName2 references/Mus_musculus/Ensembl/GRCm38/Mus_musculus.GRCm38.99.gtf /dev/stdout | \
                 awk '{print $12"\t"$1"\t"$2"\t"$3"\t"$4"\t"$5"\t"$6"\t"$7"\t"$8"\t"$9"\t"$10}' > references/Mus_musculus/Ensembl/GRCm38/Mus_musculus.GRCm38.99.refFlat

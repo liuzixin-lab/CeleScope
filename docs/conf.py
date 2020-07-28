@@ -13,12 +13,12 @@
 from pathlib import Path
 import sys
 
-sys.path.insert(0, str(Path().resolve().parent / 'scopetools'))
+sys.path.insert(0, str(Path().resolve().parent / 'celescope'))
 from _version import get_versions
 
 # -- Project information -----------------------------------------------------
 
-project = 'SCOPE-tools'
+project = 'CeleScope'
 copyright = '2020, 新格元生物科技有限公司'
 author = '新格元生物科技有限公司'
 

@@ -1,4 +1,4 @@
 include versioneer.py
-include scopetools/_version.py
-graft scopetools/templates
-graft scopetools/extra
+include celescope/_version.py
+graft celescope/templates
+graft celescope/extra

@@ -1,2 +1,2 @@
-scopetools/_version.py export-subst
+celescope/_version.py export-subst
 * text=auto eol=lf

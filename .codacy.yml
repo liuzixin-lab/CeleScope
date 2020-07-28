@@ -1,6 +1,6 @@
 ---
 exclude_paths:
-  - 'scopetools/_version.py'
+  - 'celescope/_version.py'
   - 'tests/**/*'
   - 'tests/*'
   - 'benchmarks/**/*'

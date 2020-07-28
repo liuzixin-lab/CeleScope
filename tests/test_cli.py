@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-from scopetools import cli
+from celescope import cli
 
 
 def test_cli_template():

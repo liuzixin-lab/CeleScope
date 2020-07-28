@@ -42,8 +42,8 @@ def get_config():
     cfg.VCS = "git"
     cfg.style = ""
     cfg.tag_prefix = ""
-    cfg.parentdir_prefix = "scopetools-"
-    cfg.versionfile_source = "scopetools/_version.py"
+    cfg.parentdir_prefix = "celescope-"
+    cfg.versionfile_source = "celescope/_version.py"
     cfg.verbose = False
     return cfg
 
