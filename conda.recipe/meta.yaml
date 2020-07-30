@@ -3,7 +3,8 @@
 
 package:
   name: celescope
-  version: {{ data['version'] }}
+#  version: {{ data['version'] }}
+  version: {{ GIT_DESCRIBE_TAG }}
 
 source:
   path: ..
@@ -14,8 +15,8 @@ build:
   # "skip: True  # [py<35]" (for example) to limit to Python 3.5 and newer, or
   # "skip: True  # [not win]" to limit to Windows.
   script: {{ PYTHON }} -m pip install --no-deps --ignore-installed -vv .
-  noarch: python
-  number: 2
+  number: {{ GIT_DESCRIBE_NUMBER }}
+  string: {{ GIT_BUILD_STR }}
   entry_points:
     {% for entry in data['entry_points']['console_scripts'] %}
       - {{ entry.split('=')[0].strip() }} = {{ entry.split('=')[1].strip() }}
@@ -28,16 +29,16 @@ extra:
 
 requirements:
   host:
-    - python >=3.7
+    - python ==3.7.6
     - pip
   run:
-    - python >=3.7
-    - star >=2.7
-    - fastqc >=0.11
-    - picard >=2.23
-    - ucsc-gtftogenepred >=377
-    - subread >=2.0.0
-    - samtools >=1.7
+    - python ==3.7.6
+    - star ==2.7.3a
+    - fastqc ==0.11.9
+    - picard ==2.22.8
+    - ucsc-gtftogenepred ==377
+    - subread ==2.0.0
+    - samtools ==1.9
     # dependencies are defined in setup.py
     {% for dep in data['install_requires'] %}
     - {{ dep.lower() }}
